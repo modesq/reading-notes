@@ -1,67 +1,139 @@
 # reading-notes
 
-## CLASS 01
-
-------
-
-## CLASS 02
-
-------
-
-## CLASS 03
-
-------
-
-## CLASS 04
-
-1. What is a ‘Controlled Component’?
-
-    a component that is conrtolled by react, it takes its current calue via props and notifies changes via callback functions.
-2. Should we wait to store the users responses from the form into state when they submit the form OR should we update the state with their responses as soon as they enter them? Why.
-    we should wait until the user submits the form, then we should store the responses in the state. this will prevent errors from the users and allow them to change and revies the entered responses before they get stored.
-
-3. How do we target what the user is entering if we have an event handler on an input field?
-
-    we log the text content of the input field by storing them from the fields where the event handler called the storing functions using the following code as an example:
-            `log.textContent = e.target.value;`
-
-------
-
-## CLASS 05
+## CLASS 11
 
 ### part 1
 
-1. What is the single responsibility principle and how does it apply to components?
+| SQL  | noSQL  |
+|---|---|
+| structured data  | non-structured data |
+|---|---|
+| numbers and characters  | documnets and graphs  |
+|---|---|
 
-    this principle states that every function, class and module is responsible for exactly one resposnibility, and that includes components too.
-2. What does it mean to build a ‘static’ version of your application?
+1. Which type of database is best for hierarchical data storage?
 
-    a web page that doesnt change, its wrtitten in with fixed HTML code and stored in a web server exactly as viewed by the user.
-3. Once you have a static application, what do you need to add?
+    NoSQL dbs
 
-    interactivty that can will be bulit using states and inverse data flow using fuctions.
-4. What are the three questions you
-can ask to determine if something is state?
+2. Which type of database is best for scalability?
 
-    1. Is it passed in from a parent via props? If so, it probably isn’t state.
-    2. Does it remain unchanged over time? If so, it probably isn’t state.
-    3. Can you compute it based on any other state or props in your component? If so, it isn’t state.
+    SQL dbs
 
-5. How can you identify where state needs to live?
+### part 2
 
-    by figuring out the absolute minimal representation of the state your application needs and compute everything else you need on-demand.
+1. What does SQL stand for?
 
-### part 3
+    Structured Query Language
+2. What is a relational database?
 
-1. What is a “higher-order function”?
+    database based on the relational model of data
+3. What type of structure does a relational database work with?
 
-    it is a function that takes fucntions as arguments or returns a fucntion.
-    all other functions are called first-order functions.
+4. What is a 'schema'?
+5. What is a NoSQL database?
+6. How does it work?
+7. What is inside of a Mongo database?
+8. Which is more flexible - SQL or MongoDB? and why.
+9. What is the disadvantage of a NoSQL database?
 
-2. Explore the greaterThan function as defined in the reading. In your own words, what is line 2 of this function doing?
+---------------------------
 
-    it is basically a function that takes one argument (n) and returns another function with its own argument (m) that compares these two, to return a boolean value depending on the result of that comparison.
+## CLASS 12
 
-3. Explain how either map or reduce operates, with regards to higher-order functions.
+### part 1
 
-    map basically works by using a fucntion that is passed to another fucntion which itterates through the array passed to the fucntion, all of that will return a new array containing the same number of elements as the original array, yet it may have different elements depending on the fucntion being passed to that itterative function.
+1. Describe in your own words what each group of status codes represents:
+
+    100's = The request has been received, and the server will attempt to complete it
+
+    200's indicate that the request has been successfully completed
+
+    300's = Informs the client that the requested resource is no longer available at the expected location
+
+    400s denote invalid requests
+
+    500s indicate a server-side error
+
+2. What is a status code 202?
+
+    This code informs the client that the request was valid, but that it will be processed later
+
+3. What is a status code 308?
+
+    This instructs the client to use a different URL to access the resource rather than the current one
+
+4. What code would you use if an update didn't return data to a client?
+
+    204 or 404
+
+5. What code would you use if a resource used to exist but no longer does?
+
+    409
+
+6. What is the 'Forbidden' status code?
+
+    4.3
+
+### part 2
+
+1. Why do we need to pull our MongoDB database string out of our server and put it into our .env?
+
+    so that we can easily change it later, and to hide it
+
+2. What is middleware?
+
+     Software that is between the operating system and the programs that run on it. Middleware allows for communication and data management for distributed applications, essentially acting as a hidden translation layer
+
+3. What does app.use(express.json()) do?
+
+     It parses incoming JSON requests and stores the results in the request variable
+
+4. What does the /:id mean in a route?
+
+5. What is the difference between PUT and PATCH?
+
+    PUT is a resource modification method in which the client sends data that updates the entire resource.
+
+    PATCH is a resource modification method in which the client sends incomplete data to be modified without adjusting the entire data
+
+6. How do you make a default value in a schema?
+
+     almost like creating an object
+
+7. What does a 500 error status code mean?
+
+     the server didnt complete the request properly for some reason
+
+8. What is the difference between a status 200 and a status 201?
+
+     200 means that the request was received, understood, and is being processed.
+
+     201 status code indicates that a request was successful and that a resource was created as a result.
+
+---------------------------
+
+## CLASS 13
+
+### part 1
+
+1. Which HTTP method would you use to update a record through an API?
+
+     PUT
+
+2. Which REST methods require an ID parameter?
+
+     Update and Delete.
+
+### part 2
+
+1. What's the relationship between REST and CRUD?
+
+     REST is an architectural framework that uses HTTP commands to focus on resources and hypermedia. In a database environment, the CRUD cycle is used to maintain records. In its most basic form, CRUD is a method of information manipulation that describes how an application works. REST uses HTTP instructions to control data.
+
+2. If you had to describe the process of creating a RESTful API in 5 steps, what would they be?
+
+    1. Set up a server.
+    2. Create routes.
+    3. Compile data into database.
+    4. Build the frontend.
+    5. write documentation.
