@@ -1,4 +1,4 @@
-# class 01
+# class 02
 
 ## In Tests We Trust - TDD with Python
 
